@@ -1,0 +1,135 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Thu Nov  6 22:13:27 2025
+| Host         : Praveen-Laptop running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file sorting_visualizer_top_control_sets_placed.rpt
+| Design       : sorting_visualizer_top
+| Device       : xc7a35t
+---------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    66 |
+| Unused register locations in slices containing registers |   110 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      2 |            1 |
+|      4 |            1 |
+|      8 |            1 |
+|     12 |            5 |
+|     14 |            5 |
+|    16+ |           53 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             556 |          141 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             664 |          119 |
+| Yes          | No                    | No                     |            2592 |          444 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             310 |           53 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-------------------+-------------------------------------------------+-------------------------------------+------------------+----------------+
+|    Clock Signal   |                  Enable Signal                  |           Set/Reset Signal          | Slice Load Count | Bel Load Count |
++-------------------+-------------------------------------------------+-------------------------------------+------------------+----------------+
+| ~clk_6p25mhz_BUFG |                                                 |                                     |                1 |              2 |
+|  seg_clk_div/CLK  |                                                 |                                     |                1 |              4 |
+|  clk_IBUF_BUFG    |                                                 | main_fsm/p1_in_heart_area_reg       |                3 |              8 |
+|  clk_IBUF_BUFG    | sort_engine/is_comparing76_out                  | sort_engine/swap_idx1[2]_i_1__0_n_0 |                4 |             12 |
+|  clk_IBUF_BUFG    | sort_engine/is_comparing76_out                  | sort_engine/compare_idx1[2]_i_1_n_0 |                4 |             12 |
+|  clk_IBUF_BUFG    | tutorial_sort_engine/compare_idx1[2]_i_1__0_n_0 | main_fsm/tut_sort_reset             |                3 |             12 |
+|  clk_IBUF_BUFG    | tutorial_sort_engine/sorted_boundary            | main_fsm/tut_sort_reset             |                2 |             12 |
+|  clk_IBUF_BUFG    | tutorial_sort_engine/swap_idx1[2]_i_1_n_0       | main_fsm/tut_sort_reset             |                3 |             12 |
+|  clk_IBUF_BUFG    |                                                 | debounce_C/counter10_in             |                3 |             14 |
+|  clk_IBUF_BUFG    |                                                 | debounce_D/counter10_in             |                2 |             14 |
+|  clk_IBUF_BUFG    |                                                 | debounce_L/counter10_in             |                2 |             14 |
+|  clk_IBUF_BUFG    |                                                 | debounce_R/counter10_in             |                2 |             14 |
+|  clk_IBUF_BUFG    |                                                 | debounce_U/counter10_in             |                3 |             14 |
+|  clk_IBUF_BUFG    | sort_engine/history_pointer                     | main_fsm/history_pointer_reg[4]     |                3 |             16 |
+|  clk_IBUF_BUFG    |                                                 | debounce_C/counter[15]_i_1__0_n_0   |                5 |             26 |
+|  clk_IBUF_BUFG    |                                                 | debounce_D/counter[15]_i_1__3_n_0   |                5 |             26 |
+|  clk_IBUF_BUFG    |                                                 | debounce_L/counter[15]_i_1__1_n_0   |                5 |             26 |
+|  clk_IBUF_BUFG    |                                                 | debounce_R/counter[15]_i_1__2_n_0   |                5 |             26 |
+|  clk_IBUF_BUFG    |                                                 | debounce_U/counter[15]_i_1_n_0      |                5 |             26 |
+|  clk_IBUF_BUFG    | renderer/render_state                           | renderer/addr_counter[0]_i_1_n_0    |                4 |             26 |
+|  clk_IBUF_BUFG    |                                                 | main_fsm/tut_sort_reset             |                8 |             28 |
+|  clk_IBUF_BUFG    | renderer/fb_wr_addr[12]_i_1_n_0                 |                                     |                9 |             32 |
+| ~clk_6p25mhz_BUFG |                                                 | oled_display/p_1_in                 |                4 |             34 |
+| ~clk_6p25mhz_BUFG | oled_display/delay[0]_i_1_n_0                   | oled_display/p_1_in                 |                5 |             40 |
+|  clk_IBUF_BUFG    |                                                 | tut_engine/cursor_pos[2]_i_1_n_0    |                5 |             42 |
+|  clk_IBUF_BUFG    | sort_engine/step_delay_reg[0]_0                 | sort_engine/step_delay[0]_i_1_n_0   |                7 |             50 |
+|  clk_IBUF_BUFG    | tutorial_sort_engine/delay_counter[26]_i_1_n_0  | main_fsm/tut_sort_reset             |               10 |             54 |
+|  clk_IBUF_BUFG    |                                                 | main_fsm/history_pointer_reg[4]     |               14 |             62 |
+| ~clk_6p25mhz_BUFG | oled_display/FSM_onehot_state[31]_i_1_n_0       | oled_display/p_1_in                 |                8 |             64 |
+|  clk_IBUF_BUFG    |                                                 | clk_div/count[0]_i_1__0_n_0         |                8 |             64 |
+|  clk_IBUF_BUFG    |                                                 | seg_clk_div/clear                   |                8 |             64 |
+|  clk_IBUF_BUFG    |                                                 | oled_display/p_1_in                 |               14 |             72 |
+|  clk_IBUF_BUFG    | sort_engine/history_i_index[30][2]_i_1_n_0      |                                     |               21 |             80 |
+|  clk_IBUF_BUFG    | sort_engine/history_i_index[3][2]_i_1_n_0       |                                     |                7 |             80 |
+|  clk_IBUF_BUFG    | sort_engine/history_i_index[6][2]_i_1_n_0       |                                     |               15 |             80 |
+|  clk_IBUF_BUFG    | sort_engine/history_i_index[8][2]_i_1_n_0       |                                     |               21 |             80 |
+|  clk_IBUF_BUFG    | sort_engine/history_i_index[19][2]_i_1_n_0      |                                     |               13 |             80 |
+|  clk_IBUF_BUFG    | sort_engine/history_i_index[21][2]_i_1_n_0      |                                     |               12 |             80 |
+|  clk_IBUF_BUFG    | sort_engine/history_i_index[24][2]_i_1_n_0      |                                     |               13 |             80 |
+|  clk_IBUF_BUFG    | sort_engine/history_i_index[13][2]_i_1_n_0      |                                     |               14 |             80 |
+|  clk_IBUF_BUFG    | sort_engine/history_i_index[18][2]_i_1_n_0      |                                     |               12 |             80 |
+|  clk_IBUF_BUFG    | sort_engine/history_i_index[23][2]_i_1_n_0      |                                     |               14 |             80 |
+|  clk_IBUF_BUFG    | sort_engine/history_i_index[25][2]_i_1_n_0      |                                     |               13 |             80 |
+|  clk_IBUF_BUFG    | sort_engine/history_i_index[15][2]_i_1_n_0      |                                     |               12 |             80 |
+|  clk_IBUF_BUFG    | sort_engine/history_i_index[17][2]_i_1_n_0      |                                     |                7 |             80 |
+|  clk_IBUF_BUFG    | sort_engine/history_i_index[26][2]_i_1_n_0      |                                     |               12 |             80 |
+|  clk_IBUF_BUFG    | sort_engine/history_i_index[27][2]_i_1_n_0      |                                     |               10 |             80 |
+|  clk_IBUF_BUFG    | sort_engine/history_i_index[2][2]_i_1_n_0       |                                     |               14 |             80 |
+|  clk_IBUF_BUFG    | sort_engine/history_i_index[1][2]_i_1_n_0       |                                     |                9 |             80 |
+|  clk_IBUF_BUFG    | sort_engine/history_i_index[20][2]_i_1_n_0      |                                     |               12 |             80 |
+|  clk_IBUF_BUFG    | sort_engine/history_i_index[22][2]_i_1_n_0      |                                     |               20 |             80 |
+|  clk_IBUF_BUFG    | sort_engine/history_i_index[29][2]_i_1_n_0      |                                     |               15 |             80 |
+|  clk_IBUF_BUFG    | sort_engine/history_i_index[14][2]_i_1_n_0      |                                     |               12 |             80 |
+|  clk_IBUF_BUFG    | sort_engine/history_i_index[16][2]_i_1_n_0      |                                     |               12 |             80 |
+|  clk_IBUF_BUFG    | sort_engine/history_i_index[31][2]_i_1_n_0      |                                     |               10 |             80 |
+|  clk_IBUF_BUFG    | sort_engine/history_i_index[28][2]_i_1_n_0      |                                     |               16 |             80 |
+|  clk_IBUF_BUFG    | sort_engine/history_i_index[4][2]_i_1_n_0       |                                     |               10 |             80 |
+|  clk_IBUF_BUFG    | sort_engine/history_i_index[5][2]_i_1_n_0       |                                     |               14 |             80 |
+|  clk_IBUF_BUFG    | sort_engine/history_i_index[9][2]_i_1_n_0       |                                     |               24 |             80 |
+|  clk_IBUF_BUFG    | sort_engine/history_i_index[7][2]_i_1_n_0       |                                     |               17 |             80 |
+|  clk_IBUF_BUFG    | sort_engine/history_i_index[10][2]_i_1_n_0      |                                     |               20 |             80 |
+|  clk_IBUF_BUFG    | sort_engine/history_i_index[11][2]_i_1_n_0      |                                     |                6 |             80 |
+|  clk_IBUF_BUFG    | sort_engine/history_i_index[12][2]_i_1_n_0      |                                     |               16 |             80 |
+|  clk_IBUF_BUFG    | sort_engine/history_i_index[0][2]_i_1_n_0       |                                     |               12 |             80 |
+| ~clk_6p25mhz_BUFG |                                                 | oled_display/spi_word[39]_i_1_n_0   |               18 |             90 |
+|  clk_IBUF_BUFG    |                                                 |                                     |              139 |            550 |
++-------------------+-------------------------------------------------+-------------------------------------+------------------+----------------+
+
+
